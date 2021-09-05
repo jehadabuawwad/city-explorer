@@ -1,10 +1,17 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
 const styles = {
   paddingLeft: 15,
-  width: 400,
+  width: 600,
+  height:620,
   marginTop: 10,
   marginLeft: 10,
+};
+
+const imagStyle={
+  width: 450,
+  height:400,
 };
 
 class LocationCard extends React.Component {
@@ -23,6 +30,7 @@ class LocationCard extends React.Component {
           <Card.Text>
             <b>Longitud is:</b> {this.props.DataOfLocation.lon}
           </Card.Text>
+          <Image style={imagStyle}src={this.props.MapOfLocation} rounded />
         </Card.Body>
       </Card>
     );

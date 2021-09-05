@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = {
       NameOfLocation: '',
       DataOfLocation: {},
+      MapOfLocation: '',
     };
   }
 
@@ -19,18 +20,26 @@ class App extends React.Component {
   OnSubmitOfLocationName = async (event) => {
     event.preventDefault();
     const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_IQ_KEY}&q=${this.state.NameOfLocation}&format=json`;
-
     const response = await axios.get(url);
-    console.log(response.data[0]);
     this.setState({
       DataOfLocation: response.data[0],
     });
+    const url2 = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_IQ_KEY}&zoom=15&center=${[this.state.DataOfLocation.lat, this.state.DataOfLocation.lon]}&format=jpg`;
+    const response2 = await axios.get(url2);
+    console.log(response2.request.responseURL);
+    this.setState({
+      MapOfLocation: response2.request.responseURL,
+    });
   };
+
 
   render() {
     return (
       <div>
-        <LocationCard DataOfLocation={this.state.DataOfLocation} />
+        <LocationCard
+          DataOfLocation={this.state.DataOfLocation}
+          MapOfLocation={this.state.MapOfLocation}
+        />
         <DataForm
           OnChangeOfLocationName={this.OnChangeOfLocationName}
           OnSubmitOfLocationName={this.OnSubmitOfLocationName}
