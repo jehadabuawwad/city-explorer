@@ -5,9 +5,9 @@ class ErrorModal extends React.Component {
   render() {
     return (
       <Modal show={this.props.ModalShow} onHide={this.props.handleModalShow}>
-        <Modal.Body>{this.props.errorMessage}</Modal.Body>
+        <Modal.Body>{this.props.errorMessage} <br/> Please Enter A vaild Name of a Location</Modal.Body>
         <Modal.Footer>
-          <Button variant='secondary' onClick={!this.props.handleModalShow}>
+          <Button variant='secondary' onClick={this.props.handleModalShow}>
             Close
           </Button>
         </Modal.Footer>
