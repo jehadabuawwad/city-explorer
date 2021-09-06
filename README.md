@@ -27,3 +27,47 @@ This Application is build by JavaScript using React for Front-End, Bootstrap Lib
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
+
+
+Class-06:  
+
+Number and name of feature: Feature 1. Set up your React repository & API keys.
+
+Estimate of time needed to complete: 60 Minuets 
+
+Start time: 14:00 
+
+Finish time:15:00   
+
+Actual time needed to complete: 30 Minuets 
+
+--------------------------------------------
+Number and name of feature: Feature 2. Locations: As a user of City Explorer, I want to enter the name of a location so that I can see the exact latitude and longitude of that location. 
+
+Estimate of time needed to complete: 60 Minuets 
+
+Start time: 15:00
+
+Finish time: 16:00  
+
+Actual time needed to complete: 60 Minuets 
+---------------------------------------------
+Number and name of feature: Feature 3. Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore.
+
+Estimate of time needed to complete: 60 Minuets 
+
+Start time: 16:00 
+
+Finish time:17:00   
+
+Actual time needed to complete: 60 Minuets 
+-----------------------------------------
+Number and name of feature: Feature 4. Errors: As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner. 
+
+Estimate of time needed to complete: 180 Minuets 
+
+Start time: 17:00 
+
+Finish time: 20:00   
+
+Actual time needed to complete: 180 Minuets 
