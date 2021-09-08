@@ -68,6 +68,6 @@ Estimate of time needed to complete: 180 Minuets
 
 Start time: 17:00 
 
-Finish time: 20:00   
+Finish time: 20 :00   
 
 Actual time needed to complete: 180 Minuets 
