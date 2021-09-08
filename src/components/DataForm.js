@@ -4,8 +4,8 @@ import Button from 'react-bootstrap/Button';
 
 const styles = {
   padding: 15,
-  width: 300,
-  marginTop: 5,
+  width: 330,
+  marginTop: 10,
 };
 
 class DataForm extends React.Component {
