@@ -3,24 +3,21 @@ import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 
 const cardStyles = {
-  left: 270,
-  top: -105,
-  marginTop: 10,
-  height: 950,
+  top: -50,
+  marginTop: 25,
+  height: 1050,
   width: 600,
-  marginLeft: 10,
 };
 const imagStyle = {
-  width: 400,
-  height: 400,
-  marginLeft: 75,
+  width: 325,
+  height: 325,
 };
 
 const posterUrl = 'https://image.tmdb.org/t/p/w500/';
-class MoviesCard extends React.Component {
+class Movie extends React.Component {
   render() {
     return (
-      <Card border='secondary' style={cardStyles}>
+      <Card border="primary" style={cardStyles}>
         <Card.Body>
           <Image
             style={imagStyle}
@@ -51,4 +48,4 @@ class MoviesCard extends React.Component {
     );
   }
 }
-export default MoviesCard;
+export default Movie;

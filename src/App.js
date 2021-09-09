@@ -1,17 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
-import WeatherCard from './components/WeatherCard';
 import axios from 'axios';
-import ErrorModal from './components/ErrorModal';
-import DataForm from './components/DataForm';
-import MoviesCard from './components/MoviesCard';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-const styles = {
-  width: 1500,
-  height: 600,
-  marginTop: -555,
-};
+import React from 'react';
+import DataForm from './components/DataForm';
+import WeatherDAY from './components/WeatherDay';
+import Movie from './components/Movie';
+import ErrorModal from './components/ErrorModal';
 
 class App extends React.Component {
   constructor(props) {
@@ -68,24 +63,28 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <DataForm
-          OnChangeOfLocationName={this.OnChangeOfLocationName}
-          OnSubmitOfLocationName={this.OnSubmitOfLocationName}
-        />
+        <Container>
+          <Row style={{ marginTop: 5 }} xs={1} md={1} className='g-4'>
+            <DataForm
+              OnChangeOfLocationName={this.OnChangeOfLocationName}
+              OnSubmitOfLocationName={this.OnSubmitOfLocationName}
+            />
+          </Row>
+        </Container>
 
         {this.state.ShowDetails && (
           <div>
-            <WeatherCard
-              NameOfLocation={this.state.NameOfLocation}
-              MapOfLocation={this.state.MapOfLocation}
-              atAndLonData={this.state.latAndLonData}
-              WeatherData={this.state.WeatherData}
-            />
-            <Container style={styles}>
-              <Row xs={1} md={1} className='g-4'>
+            <Container>
+              <WeatherDAY
+                NameOfLocation={this.state.NameOfLocation}
+                MapOfLocation={this.state.MapOfLocation}
+                atAndLonData={this.state.latAndLonData}
+                WeatherData={this.state.WeatherData}
+              />
+              <Row xs='auto' md={2}>
                 {this.state.MoviesData.map((element) => {
                   return (
-                    <MoviesCard
+                    <Movie
                       image_url={element.image_url}
                       title={element.title}
                       overview={element.overview}
