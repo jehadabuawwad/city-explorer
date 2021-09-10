@@ -51,7 +51,7 @@ class App extends React.Component {
       });
 
       const url4 = `${process.env.REACT_APP_SERVER_URL}/movies?city_name=${this.state.NameOfLocation}`;
-      axios.get(url4).then((moviesResopnse) => {
+      await axios.get(url4).then((moviesResopnse) => {
         this.setState({ MoviesData: moviesResopnse.data });
       });
 
