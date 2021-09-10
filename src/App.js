@@ -52,6 +52,7 @@ class App extends React.Component {
 
       const url4 = `${process.env.REACT_APP_SERVER_URL}/movies?city_name=${this.state.NameOfLocation}`;
       await axios.get(url4).then((moviesResopnse) => {
+        console.log(moviesResopnse);
         this.setState({ MoviesData: moviesResopnse.data });
       });
 
@@ -78,31 +79,31 @@ class App extends React.Component {
         </Container>
 
         {this.state.ShowDetails && (
-          <div>
-            <Container>
+          <Container >
+            <Row style={{ marginRight: 25, marginLeft:25 }} xs={1} md={1}>
               <WeatherDAY
                 NameOfLocation={this.state.NameOfLocation}
                 MapOfLocation={this.state.MapOfLocation}
                 atAndLonData={this.state.latAndLonData}
                 WeatherData={this.state.WeatherData}
               />
-              <Row xs='auto' md={2}>
-                {this.state.MoviesData.map((element) => {
-                  return (
-                    <Movie
-                      image_url={element.image_url}
-                      title={element.title}
-                      overview={element.overview}
-                      average_votes={element.average_votes}
-                      total_votes={element.total_votes}
-                      popularity={element.popularity}
-                      released_on={element.released_on}
-                    />
-                  );
-                })}
-              </Row>
-            </Container>
-          </div>
+            </Row>
+            <Row style={{ marginRight: 25, marginLeft:25 }} xs={1} md={1}>
+              {this.state.MoviesData.map((element) => {
+                return (
+                  <Movie
+                    image_url={element.image_url}
+                    title={element.title}
+                    overview={element.overview}
+                    average_votes={element.average_votes}
+                    total_votes={element.total_votes}
+                    popularity={element.popularity}
+                    released_on={element.released_on}
+                  />
+                );
+              })}
+            </Row>
+          </Container>
         )}
         <ErrorModal
           handleModalShow={this.handleModalShow}
