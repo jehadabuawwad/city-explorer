@@ -80,7 +80,7 @@ class App extends React.Component {
 
         {this.state.ShowDetails && (
           <Container>
-            <Row style={{ marginRight: 25, marginLeft: 25 }} xs={1} md={1}>
+            <Row s xs={1} md={1}>
               <WeatherDAY
                 NameOfLocation={this.state.NameOfLocation}
                 MapOfLocation={this.state.MapOfLocation}
@@ -88,7 +88,7 @@ class App extends React.Component {
                 WeatherData={this.state.WeatherData}
               />
             </Row>
-            <Row xs={1} md={4}>
+            <Row xs={1} md={3}>
               {this.state.MoviesData.map((element) => {
                 return (
                   <Movie
