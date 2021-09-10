@@ -4,13 +4,13 @@ import Image from 'react-bootstrap/Image';
 import { Row, Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 const cardStyles = {
-  height: 'auto',
+  height: 900,
   top: -50,
   marginTop: 50,
 };
 const imagStyle = {
-  width: 280,
-  height: 280,
+  width: 275,
+  height: 275,
 };
 
 const posterUrl = 'https://image.tmdb.org/t/p/w500/';
