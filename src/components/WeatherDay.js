@@ -5,11 +5,12 @@ import { Row, Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 const styles = {
   height: 'auto',
+  width: 'auto',
   marginTop: 25,
   marginBottom: 50,
 };
 const imagStyle = {
-  width: 325,
+  width: 425,
   height: 325,
   marginLeft: 0,
   marginTop: 10,
@@ -19,24 +20,24 @@ class WeatherDay extends React.Component {
   render() {
     return (
       <Container>
-        <Row style={styles} md={3}>
+        <Row md={3}>
           <Col sm></Col>
           <Col sm>
-            <Card border='primary' bg={'Light'} text={'dark'}>
-              <Col sm={{ offset: 0 }} md={{ offset: 0 }}>
+            <Card style={styles} border='secondary' bg={'Light'} text={'dark'}>
+              <Col sm={{ offset: 1 }} md={{ offset: 0 }}>
                 <Card.Body>
                   <Row>
-                    <Card.Title style={{ marginLeft: 5 }}>
+                    <Card.Title >
                       Weather Information in <b> {this.props.NameOfLocation}</b>
                     </Card.Title>
                   </Row>
                   <Row>
-                    <Card.Text style={{ marginLeft: 32 }}>
+                    <Card.Text >
                       Date of the Day :<b> {this.props.WeatherData.data}</b>
                     </Card.Text>
                   </Row>
                   <Row>
-                    <Card.Text style={{ marginLeft: 7 }}>
+                    <Card.Text >
                       Weather Description :
                       <b>{this.props.WeatherData.description}</b>
                     </Card.Text>
@@ -52,7 +53,7 @@ class WeatherDay extends React.Component {
 
                   <br />
                   <Row>
-                    <Card.Title style={{ marginLeft: 15 }}>
+                    <Card.Title >
                       Scroll Down To See Popular Movies Realted to the City Name
                       you have Entered 🎥{' '}
                     </Card.Title>

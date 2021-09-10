@@ -4,13 +4,13 @@ import Image from 'react-bootstrap/Image';
 import { Row, Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 const cardStyles = {
-  height: 900,
+  height: 1000,
   top: -50,
   marginTop: 50,
 };
 const imagStyle = {
-  width: 275,
-  height: 275,
+  width: 340,
+  height: 340,
 };
 
 const posterUrl = 'https://image.tmdb.org/t/p/w500/';
@@ -23,7 +23,7 @@ class Movie extends React.Component {
             sm={{ size: 'auto', offset: 0 }}
             md={{ size: 'auto', offset: 0 }}
           >
-            <Card border='primary' style={cardStyles}>
+            <Card border='secondary' style={cardStyles}>
               <Card.Body>
                 <Image
                   style={imagStyle}
