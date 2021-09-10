@@ -36,23 +36,28 @@ class App extends React.Component {
     console.log(this.state.NameOfLocation);
     try {
       const url1 = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_IQ_KEY}&q=${this.state.NameOfLocation}&format=json`;
-      const response1 = await axios.get(url1);
-      this.setState({ latAndLonData: response1.data[0] });
+      await axios.get(url1).then((locationResponse) => {
+        this.setState({ latAndLonData: locationResponse.data[0] });
 
-      const url2 = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_IQ_KEY}&zoom=15&center=[${this.state.latAndLonData.lat},${this.state.latAndLonData.lon}]&format=jpg`;
-      const response2 = await axios.get(url2);
-      this.setState({ MapOfLocation: response2.request.responseURL });
+        const url2 = `${process.env.REACT_APP_SERVER_URL}/weather?city_name=${this.state.NameOfLocation}&lat=${this.state.latAndLonData.lat}&lon=${this.state.latAndLonData.lon}`;
+        axios.get(url2).then((weatherResponse) => {
+          this.setState({ WeatherData: weatherResponse.data[0] });
 
-      const url3 = `${process.env.REACT_APP_SERVER_URL}/weather?city_name=${this.state.NameOfLocation}&lat=${this.state.latAndLonData.lat}&lon=${this.state.latAndLonData.lon}`;
-      const response3 = await axios.get(url3);
-      this.setState({ WeatherData: response3.data[0] });
+          const url3 = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_IQ_KEY}&zoom=15&center=[${this.state.latAndLonData.lat},${this.state.latAndLonData.lon}]&format=jpg`;
+          axios.get(url3).then((mapResponse) => {
+            this.setState({ MapOfLocation: mapResponse.request.responseURL });
+          });
+        });
+      });
 
       const url4 = `${process.env.REACT_APP_SERVER_URL}/movies?city_name=${this.state.NameOfLocation}`;
-      const response4 = await axios.get(url4);
-      console.log(response4);
-      this.setState({ MoviesData: response4.data });
+      axios.get(url4).then((moviesResopnse) => {
+        this.setState({ MoviesData: moviesResopnse.data });
+      });
+
       this.setState({ ShowDetails: !this.state.ShowDetails });
     } catch (error) {
+      console.log(error);
       this.setState({
         errorMessage: error.message,
         ModalShow: true,
