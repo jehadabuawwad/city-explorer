@@ -5,8 +5,8 @@ import { Row, Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 const cardStyles = {
   height: 'auto',
-  top:-50,
-  marginTop: 50, 
+  top: -50,
+  marginTop: 50,
 };
 const imagStyle = {
   width: 280,
@@ -19,8 +19,11 @@ class Movie extends React.Component {
     return (
       <Container>
         <Row>
-          <Col  sm={{ size: 'auto', offset: 0 }} md={{ size: 'auto', offset: 0 }}>
-            <Card border='primary' style={cardStyles} >
+          <Col
+            sm={{ size: 'auto', offset: 0 }}
+            md={{ size: 'auto', offset: 0 }}
+          >
+            <Card border='primary' style={cardStyles}>
               <Card.Body>
                 <Image
                   style={imagStyle}

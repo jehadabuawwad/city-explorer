@@ -15,8 +15,6 @@ const imagStyle = {
   marginTop: 10,
 };
 
-
-
 class WeatherDay extends React.Component {
   render() {
     return (
@@ -54,7 +52,7 @@ class WeatherDay extends React.Component {
 
                   <br />
                   <Row>
-                    <Card.Title  style={{ marginLeft: 15 }}>
+                    <Card.Title style={{ marginLeft: 15 }}>
                       Scroll Down To See Popular Movies Realted to the City Name
                       you have Entered 🎥{' '}
                     </Card.Title>
