@@ -1,27 +1,5 @@
 # City Explorer
-
-**Author**: Jehad Abu Awwad
-**Version**: 1.0.0 
-
-## Overview
-
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
-
-City Explorer is an application used to help users in Collecting Information about a place in the city by
-Searching for tags about the place.
-
-## Getting Started
-
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-
-You Can Enter to the [Deployment Link]('https://jehadabuawwad-city-explorer.netlify.app/') and start using it!
-
-## Architecture
-
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-
-This Application is build by JavaScript using React for Front-End, Bootstrap Library for Rendering the Front-End Components with screen sizing also th axion library which handle the WRRC (Web Request Response Cycle) for the Location IQ Geocoding API in the Back-End. 
-
+Link for Deployment : [Link](https://jehadabuawwad-city-explorer.netlify.app)
 # Time Managment
 
 ------------------------------------------------------------------------------------------------------------------------ 
